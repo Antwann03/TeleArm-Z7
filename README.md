@@ -1,6 +1,6 @@
 # TeleArm-Z7: FPGA Based Teleporated Robotic Arm Control System
 ---
-This repository will contain project files for TeleArm-Z7, a teleoperated robotic arm developed for the Fall 2026 ECE 520: System on Chip Design course. The goal of the project is to design, build, and program a functional telepathic robotic arm system. Where it consists of a hand operated master arm and a servo-driven slave arm that's capable of remotely grasping and manipualting objectss
+This repository will contain project files for TeleArm-Z7, a teleoperated robotic arm developed for the Fall 2026 ECE 520: System on Chip Design course. The goal of the project is to design, build, and program a functional teleoperated robotic arm system. Where it consists of a hand operated master arm and a servo-driven slave arm that's capable of remotely grasping and manipualting objectss
 
 **Performed By:**
 - Antonio Anzora Jr
@@ -10,7 +10,7 @@ This repository will contain project files for TeleArm-Z7, a teleoperated roboti
 
 # Description 
 ---
-TeleArm-Z7 is a teleoperated robotic arm capable of picking up objects from a distance, with an operating range of 3 feet or more between the master and slave arms.
+TeleArm-Z7 is a teleoperated robotic arm capable of picking up objects from a distance, with the master and slave arms connected via a 3+ foot UART cable.
 # Results and Video Demonstration Links
 ---
 
