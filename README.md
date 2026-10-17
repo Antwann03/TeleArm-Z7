@@ -14,8 +14,6 @@ TeleArm-Z7 is a teleoperated robotic arm capable of picking up objects from a di
 # Results and Video Demonstration Links
 ---
 
-# Background and Methodolgy
----
 # Background and Methodology
 ---
 TeleArm-Z7 is a teleoperated robotic arm built around a master-slave architecture. A hand-operated master arm senses joint positions via the Zynq's XADC, while a trigger controls the gripper. This data is sent over UART to a servo-driven slave arm, which mirrors the master's movements to grasp objects from a distance.
@@ -33,9 +31,27 @@ The design splits tasks across the Zynq-7000's PS-PL architecture: the PL handle
 |Zybo Z7-10 (Zynq-7000 SoC)|1|Digilent|$314.00|[Product Link](https://digilent.com/shop/zybo-z7-zynq-7000-arm-fpga-soc-development-board/)|
 |25KG Digital Servo Motor|4|LewanSoul|$13.99|[Product Link](https://www.amazon.com/dp/B0DDKN9RS6?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)|
 |MG995 Server Motor 6 Pack|1|Deego-FPV|$26.99|[Product Link](https://www.amazon.com/dp/B0D7M4LHBP?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)|
+| Rotary Potentiometer, 10kΩ Linear (COM-09939) | 4 (plus spares) | SparkFun | $1.25 | [Product Link](https://www.sparkfun.com/rotary-potentiometer-10k-ohm-linear.html) |
+| Metal Pushbutton with Wires, Momentary, 16mm Blue (COM-11967) | 1 | SparkFun | ~$8 | [Product Link](https://www.sparkfun.com/metal-pushbutton-momentary-16mm-blue.html) |
 
 # Pinout Table
 ---
+| Signal | Direction | Pmod Pin | FPGA Pin | Connects To |
+|--------|-----------|----------|----------|-------------|
+| clk | Input | Onboard | K17 | 125 MHz system clock |
+| rst | Input | Onboard (BTN0) | K18 | Reset button |
+| pot_base_p / pot_base_n | Input (analog) | JA1 / JA7 | N15 / N16 | Lead arm base pot wiper / GND |
+| pot_shoulder_p / pot_shoulder_n | Input (analog) | JA2 / JA8 | L14 / L15 | Lead arm shoulder pot wiper / GND |
+| pot_elbow_p / pot_elbow_n | Input (analog) | JA3 / JA9 | K16 / J16 | Lead arm elbow pot wiper / GND |
+| pot_wrist_p / pot_wrist_n | Input (analog) | JA4 / JA10 | K14 / J14 | Lead arm wrist pot wiper / GND |
+| grip_btn | Input | JC1 | V15 | Lead arm gripper pushbutton (other side to GND, pull-up enabled) |
+| pwm_base | Output | JB1 | V8 | Follower base servo (25KG) signal |
+| pwm_shoulder | Output | JB2 | W8 | Follower shoulder servo (25KG) signal |
+| pwm_elbow | Output | JB3 | U7 | Follower elbow servo (25KG) signal |
+| pwm_wrist | Output | JB4 | V7 | Follower wrist servo (25KG) signal |
+| pwm_gripper | Output | JB7 | Y7 | Follower gripper servo (MG995) signal |
+| GND | Power | JA5 / JB5 / JC5 | n/a | Common ground with the servo supply |
+
 
 # CAD & 3D Models
 ---
